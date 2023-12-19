@@ -2,6 +2,10 @@ from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
+    """
+    Application settings using Pydantic.
+    """
+
     TITLE: str
     API_V1_STR: str
     JWT_SECRET_KEY: str
@@ -10,7 +14,6 @@ class Settings(BaseSettings):
 
     DATABASE_URL: str
     CORS_ORIGINS: list[str] = ["http://localhost", "http://localhost:3000"]
-    MONGO_DB_URL = "MONGO_DB_URL"
     CLOUDINARY_NAME: str
     CLOUDINARY_API_KEY: str
     CLOUDINARY_API_SECRET: str
@@ -21,4 +24,5 @@ class Settings(BaseSettings):
         case_sensitive = True
 
 
+# Instantiate the settings object
 settings = Settings()
